@@ -122,26 +122,27 @@ And Voila! You can of course create multiple rest controllers with the same or d
 
 #####Using Mongoose Adapter
 
-```
-var app,express,http,mongoose,Schema,
-Model,controller,adapter,rest;
+```javascript
 
-http = require('http');
-rest = require('rest');
-mongoose=require('mongoose');
-express=require('express');
+	var app,express,http,mongoose,Schema,
+	Model,controller,adapter,rest;
 
-app=express();
-app.use(express.json());
-mongoose.connect("mongodb://localhost/db");
-Schema = mongoose.Schema({message:String});
-Model = mongoose.model('Model',Schema);
+	http = require('http');
+	rest = require('rest');
+	mongoose=require('mongoose');
+	express=require('express');
 
-controller = new rest.Controller(express());
-controller.setAdapter(new rest.adapter.MongooseAdapter(Model,'model'));
+	app=express();
+	app.use(express.json());
+	mongoose.connect("mongodb://localhost/db");
+	Schema = mongoose.Schema({message:String});
+	Model = mongoose.model('Model',Schema);
 
-app.use('/api/model',controller.handle());
+	controller = new rest.Controller(express());
+	controller.setAdapter(new rest.adapter.MongooseAdapter(Model,'model'));
 
-http.createServer(app).listen(3000);
+	app.use('/api/model',controller.handle());
+
+	http.createServer(app).listen(3000);
 
 ```
