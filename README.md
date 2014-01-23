@@ -19,9 +19,9 @@ version:0.0.1
 
 ###Database support through builtin adapters
 
-	- Mongoose ( mongoose  package required)
-	- MongoDB ( mongodb package required)
-	- Javascript Arrays
+- Mongoose ( mongoose  package required)
+- MongoDB ( mongodb package required)
+- Javascript Arrays
 
 ###INSTALLATION
 
@@ -31,7 +31,7 @@ version:0.0.1
 
 ####BASIC USAGE
 
-**Exemple with MongoDB**
+######Exemple with MongoDB
 
 Create a express app with a json parser
 
@@ -119,3 +119,29 @@ The following routes have been created
 	DELETE /api/documents/:id
 
 And Voila! You can of course create multiple rest controllers with the same or different DB adapters.
+
+#####Using Mongoose Adapter
+
+```
+var app,express,http,mongoose,Schema,
+Model,controller,adapter,rest;
+
+http = require('http');
+rest = require('rest');
+mongoose=require('mongoose');
+express=require('express');
+
+app=express();
+app.use(express.json());
+mongoose.connect("mongodb://localhost/db");
+Schema = mongoose.Schema({message:String});
+Model = mongoose.model('Model',Schema);
+
+controller = new rest.Controller(express());
+controller.setAdapter(new rest.adapter.MongooseAdapter(Model,'model'));
+
+app.use('/api/model',controller.handle());
+
+http.createServer(app).listen(3000);
+
+```
