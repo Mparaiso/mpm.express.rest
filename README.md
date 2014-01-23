@@ -35,13 +35,17 @@ version:0.0.1
 
 Create a express app with a json parser
 
+```javascript
+
 	var app,express;
 	express=require('express');
 	app=express();
 	app.use(express.json());
+```
 
 Create a mongodb connection , requires a mongodb database ( on localhost here )
 
+```javascript
 
 	var MongoClient,db,collection;
 	MongoClient=require('mongodb').MongoClient;
@@ -50,8 +54,11 @@ Create a mongodb connection , requires a mongodb database ( on localhost here )
 		collection = db.collection("documents");
 		done();
 	});
+```
 
 Create the restfull controller and the adapter for MongoDB
+
+```javascript
 
 	var done,controller,adapter,rest,http;
 	
@@ -75,6 +82,7 @@ Create the restfull controller and the adapter for MongoDB
 		// call controller.handle to create all the routes needs for our rest api
 		http.createServer(controller.handle()).listen(3000);
 	}
+```
 
 The following routes have been created
 
@@ -85,6 +93,8 @@ The following routes have been created
 	DELETE /:id   delete
 
 or pass the express app into another express app
+
+```javascript
 
 	//main express app
 	var mainapp = require('./mainapp');
@@ -98,6 +108,7 @@ or pass the express app into another express app
 		mainapp.use("/api/documents/",controller.handler)
 		http.createServer(mainapp).listen(3000);
 	}
+```
 
 The following routes have been created
 
