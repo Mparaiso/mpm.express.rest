@@ -1,14 +1,14 @@
 {
   "name": "mpm.express.rest",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "rest framework for express",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --recursive -R spec"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:Mparaiso/mpm.rest.express.git"
+    "url": "git@github.com:Mparaiso/mpm.express.rest.git"
   },
   "keywords": [
     "rest",
@@ -19,7 +19,7 @@
   "author": "mparaiso",
   "license": "LGPL",
   "bugs": {
-    "url": "https://github.com/Mparaiso/mpm.rest.express/issues"
+    "url": "git@github.com:Mparaiso/mpm.express.rest.git/issues"
   },
   "dependencies": {
     "express": "~3.X"
