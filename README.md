@@ -1,6 +1,8 @@
 mpm.express.rest
 ================
 
+[![NPM](https://nodei.co/npm/mpm.express.rest.png)](https://nodei.co/npm/mpm.express.rest/)
+
 **Rest Framework for Express**
 
 mpm.express.rest helps developpers write restfull controllers 
@@ -15,7 +17,7 @@ version:0.0.1
 
 	nodejs , npm , expressjs
 
-###Database support
+###Database support through builtin adapters
 
 	- Mongoose ( mongoose  package required)
 	- MongoDB ( mongodb package required)
@@ -40,9 +42,11 @@ Create a express app with a json parser
 
 Create a mongodb connection , requires a mongodb database ( on localhost here )
 
+
 	var MongoClient,db,collection;
 	MongoClient=require('mongodb').MongoClient;
 	MongoClient.connect("mongodb://localhost:27017/database",function(err,db){
+		//collection will be needed for the MongoDB adapter
 		collection = db.collection("documents");
 		done();
 	});
@@ -81,7 +85,7 @@ or pass the express app into another express app
 		controller = new rest.Controller(app);
 		// set the adapter , the MongoDBAdapter needs a MongoDB Collection object
 		controller.setAdapter(new rest.adapter.MongoDBAdapter(collection))
-		// call controller.handle to create all the routes needs for our rest api
+		// call controller.handle to create all the routes needed for our rest api
 		mainapp.use("/api/documents/controller.handler)
 		http.createServer(mainapp).listen(3000);
 	}
