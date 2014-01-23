@@ -59,7 +59,16 @@ Create the restfull controller and the adapter for MongoDB
 	rest = require('mpm.express.rest');
 	
 	done = function(){
-		//pass the express app into the constructor
+		/**
+		 * pass the express app into the constructor
+		 * you can allow or forbid some verbs by passing an option object 
+		 * with a allows object : 
+		 * @example :
+		 * new rest.Controller(app,{allows:['list','get','post','put','delete']});
+		 * if no allows option , all verbs and methods are allowed. if you want
+		 * a readonly restfull controller : 
+		 * new rest.Controller(app,{allows:['list','get']});
+		 */
 		controller = new rest.Controller(app);
 		// set the adapter , the MongoDBAdapter needs a MongoDB Collection object
 		controller.setAdapter(new rest.adapter.MongoDBAdapter(collection))
@@ -69,11 +78,11 @@ Create the restfull controller and the adapter for MongoDB
 
 The following routes have been created
 
-	GET    /
-	GET    /:id
-	POST   /
-	PUT    /:id
-	DELETE /:id
+	GET    / 	  list resources,query parameters can be passed to the db adapter for filtering,ect...
+	GET    /:id   read
+	POST   /      create
+	PUT    /:id   update a resource
+	DELETE /:id   delete
 
 or pass the express app into another express app
 
