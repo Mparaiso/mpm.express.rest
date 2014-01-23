@@ -120,7 +120,7 @@ The following routes have been created
 
 And Voila! You can of course create multiple rest controllers with the same or different DB adapters.
 
-#####Using Mongoose Adapter
+#####Using Mongoose
 
 ```javascript
 
@@ -128,7 +128,7 @@ And Voila! You can of course create multiple rest controllers with the same or d
 	Model,controller,adapter,rest;
 
 	http = require('http');
-	rest = require('rest');
+	rest = require('mpm.express.rest');
 	mongoose=require('mongoose');
 	express=require('express');
 
