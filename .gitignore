@@ -1,0 +1,4 @@
+doc
+temp
+*.sublime-*
+node_modules
