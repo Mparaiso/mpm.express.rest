@@ -86,7 +86,7 @@ or pass the express app into another express app
 		// set the adapter , the MongoDBAdapter needs a MongoDB Collection object
 		controller.setAdapter(new rest.adapter.MongoDBAdapter(collection))
 		// call controller.handle to create all the routes needed for our rest api
-		mainapp.use("/api/documents/controller.handler)
+		mainapp.use("/api/documents/",controller.handler)
 		http.createServer(mainapp).listen(3000);
 	}
 

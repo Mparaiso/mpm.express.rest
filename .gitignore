@@ -2,4 +2,5 @@ doc
 temp
 *.sublime-*
 node_modules
+cover
 -p
