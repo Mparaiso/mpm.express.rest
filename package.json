@@ -1,6 +1,6 @@
 {
   "name": "mpm.express.rest",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "rest framework for express",
   "main": "index.js",
   "scripts": {

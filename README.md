@@ -11,7 +11,7 @@ to write glue code to link the database to express routes.
 
 author: mparaiso <mparaiso@online.fr>
 licence: LGPL
-version:0.0.1
+version:0.0.5
 
 ###REQUIREMENTS
 
@@ -71,10 +71,10 @@ Create the restfull controller and the adapter for MongoDB
 		 * you can allow or forbid some verbs by passing an option object 
 		 * with a allows object : 
 		 * @example :
-		 * new rest.Controller(app,{allows:['list','get','post','put','delete']});
+		 * new rest.Controller(app,{allow:['list','get','post','put','delete']});
 		 * if no allows option , all verbs and methods are allowed. if you want
 		 * a readonly restfull controller : 
-		 * new rest.Controller(app,{allows:['list','get']});
+		 * new rest.Controller(app,{allow:['list','get']});
 		 */
 		controller = new rest.Controller(app);
 		// set the adapter , the MongoDBAdapter needs a MongoDB Collection object
@@ -120,7 +120,7 @@ The following routes have been created
 
 And Voila! You can of course create multiple rest controllers with the same or different DB adapters.
 
-#####Using Mongoose
+##### Using Mongoose
 
 ```javascript
 
@@ -146,3 +146,12 @@ And Voila! You can of course create multiple rest controllers with the same or d
 	http.createServer(app).listen(3000);
 
 ```
+
+### Changelog
+
+- 0.0.5 allows option is now __allow__
+
+### TODO
+
+- [ ] implement ETAG support
+- [ ] implement resource nesting (ex :/foo/:id/bar )
