@@ -19,11 +19,12 @@
   "author": "mparaiso",
   "license": "LGPL",
   "bugs": {
-    "url": "git@github.com:Mparaiso/mpm.express.rest.git/issues"
+    "url": "https://github.com/Mparaiso/mpm.express.rest/issues"
   },
   "dependencies": {
     "express": "~3.X",
-    "lodash": "~2.4.1"
+    "lodash": "~2.4.1",
+    "async": "~0.9.0"
   },
   "devDependencies": {
     "codo": "*",
