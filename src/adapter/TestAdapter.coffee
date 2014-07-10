@@ -1,6 +1,6 @@
 "use strict"
 Base = require "./Base"
-_ = require "underscore"
+_ = require "lodash"
 ###
 return the index of an element according to a predicate 
 @param  {Array}   collection 

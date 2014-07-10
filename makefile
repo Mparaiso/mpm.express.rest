@@ -1,5 +1,5 @@
 test: build
-	@mocha --recursive -R spec
+	@npm test
 doc: src
 	@codo -o doc src
 build: src

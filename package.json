@@ -1,6 +1,6 @@
 {
   "name": "mpm.express.rest",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "rest framework for express",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,8 @@
     "url": "git@github.com:Mparaiso/mpm.express.rest.git/issues"
   },
   "dependencies": {
-    "express": "~3.X"
+    "express": "~3.X",
+    "lodash": "~2.4.1"
   },
   "devDependencies": {
     "codo": "*",
@@ -30,8 +31,8 @@
     "chai": "*",
     "supertest": "*",
     "sinon": "*",
-    "source-map-support":"*",
-    "mongoose":"*",
-    "mongodb":"*"
+    "source-map-support": "*",
+    "mongoose": "*",
+    "mongodb": "*"
   }
 }

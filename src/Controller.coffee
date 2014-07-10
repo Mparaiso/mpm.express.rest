@@ -1,7 +1,7 @@
 "use strict"
 ModelNotFoundError = require './ModelNotFoundError'
 async = require('async')
-_ = require('underscore')
+_ = require('lodash')
 crypto = require 'crypto'
 md5 = (string)->crypto.createHash('md5').update(string).digest('hex')
 ###

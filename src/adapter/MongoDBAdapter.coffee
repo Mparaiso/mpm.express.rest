@@ -1,7 +1,7 @@
 "use strict"
 
 Base = require "./Base"
-_ = require 'underscore'
+_ = require 'lodash'
 try
     ObjectID = require("mongodb").ObjectID
 catch error
